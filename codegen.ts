@@ -6,7 +6,7 @@ const config: CodegenConfig = {
   generates: {
     './src/__generated__/': {
       preset: 'client',
-      plugins: [],
+      plugins: ['typescript', 'typescript-operations'],
       presetConfig: {
         gqlTagName: 'gql',
       },
@@ -16,3 +16,14 @@ const config: CodegenConfig = {
 };
 
 export default config;
+
+
+// .yml syntax
+
+// schema: http://localhost:3000/api/graphql
+// documents: './client/**/*.graphql'
+// generates:
+//   ./client/generated/graphql.ts:
+//     plugins:
+//       - typescript
+//       - typescript-operations

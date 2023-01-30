@@ -1,6 +1,8 @@
 import './globals.css';
 import Client from './apollo-client';
 
+
+
 export default function RootLayout({
   children,
 }: {
