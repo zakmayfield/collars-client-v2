@@ -16,14 +16,3 @@ const config: CodegenConfig = {
 };
 
 export default config;
-
-
-// .yml syntax
-
-// schema: http://localhost:3000/api/graphql
-// documents: './client/**/*.graphql'
-// generates:
-//   ./client/generated/graphql.ts:
-//     plugins:
-//       - typescript
-//       - typescript-operations

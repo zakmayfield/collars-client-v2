@@ -1,7 +1,5 @@
 import './globals.css';
-import Client from './apollo-client';
-
-
+import { Provider as ApolloProvider } from '@/apollo';
 
 export default function RootLayout({
   children,
@@ -10,14 +8,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <Client>
-        <body>{children}</body>
-      </Client>
+      <ApolloProvider>
+        <body className='text-center p-2'>{children}</body>
+      </ApolloProvider>
     </html>
   );
 }

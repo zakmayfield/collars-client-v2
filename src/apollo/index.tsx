@@ -30,6 +30,6 @@ const client = new ApolloClient({
   name: 'collars-client-v2',
 });
 
-export default function Client({ children }: { children: React.ReactNode }) {
+export function Provider({ children }: { children: React.ReactNode }) {
   return <ApolloProvider client={client}>{children}</ApolloProvider>;
 }
