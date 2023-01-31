@@ -17,6 +17,8 @@ const httpLink = new HttpLink({
 const authMiddleware = new ApolloLink((operation, forward) => {
   let token = window.localStorage.getItem('token') || '';
 
+  console.log(`::: token from server creation ::: ${token}`)
+
   operation.setContext(({ headers = {} }) => ({
     headers: {
       ...headers,

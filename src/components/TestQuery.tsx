@@ -13,11 +13,9 @@ const AGENCY_BY_ID = gql`
 `;
 
 function TestQuery() {
-  const { data } = useQuery(AGENCY_BY_ID, {
-    fetchPolicy: 'cache-and-network',
-  });
+  const { data } = useQuery(AGENCY_BY_ID);
 
-  console.log('::: data from TestQuery.tsx :::', data?.agencyById)
+//   console.log('::: data from TestQuery.tsx :::', data?.agencyById)
   return (
     <div>
       <h3>Test Query Component</h3>
