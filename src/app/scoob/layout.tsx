@@ -1,3 +1,5 @@
+import TestQuery from '@/components/TestQuery';
+
 export default function ScoobLayout({
   children,
 }: {
@@ -5,6 +7,7 @@ export default function ScoobLayout({
 }) {
   return (
     <section>
+      <TestQuery />
       <section>{children}</section>
     </section>
   );

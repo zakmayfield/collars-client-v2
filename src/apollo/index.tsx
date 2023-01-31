@@ -9,7 +9,10 @@ import {
   concat,
 } from '@apollo/client';
 
-const httpLink = new HttpLink({ uri: 'http://localhost:4000/graphql' });
+const httpLink = new HttpLink({
+  uri: 'http://localhost:4000/graphql',
+  credentials: 'same-origin',
+});
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   let token = window.localStorage.getItem('token') || '';
@@ -28,6 +31,11 @@ const client = new ApolloClient({
   link: concat(authMiddleware, httpLink),
   cache: new InMemoryCache(),
   name: 'collars-client-v2',
+  defaultOptions: {
+    watchQuery: {
+      fetchPolicy: 'cache-and-network',
+    },
+  },
 });
 
 export function Provider({ children }: { children: React.ReactNode }) {
